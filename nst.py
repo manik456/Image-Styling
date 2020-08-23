@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import PIL
 import streamlit as st
 import tensorflow as tf
