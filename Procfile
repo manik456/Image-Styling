@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run nst.py --server.enableWebsocketCompression=false
+web: sh setup.sh && streamlit run nst.py
