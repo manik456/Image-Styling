@@ -8,7 +8,8 @@ import tensorflow_hub as tf_hub
 
 @st.cache(show_spinner=False)
 def load_img(img_path):
-    img=PIL.Image.open(img_path)
+    #img=PIL.Image.open(img_path)
+    img=tf.keras.preprocessing.image.load_img(img_path)
     img=np.asarray(img)
     img=np.expand_dims(img,axis=0)/255
     ### converting np array to eager_tensor to make it
