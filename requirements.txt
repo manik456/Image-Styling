@@ -1,5 +1,5 @@
 numpy==1.17.0
-streamlit==0.60.0
+streamlit==0.62.0
 pillow==7.2.0
 tensorflow-cpu==2.1.0
 tensorflow_hub==0.6.0
