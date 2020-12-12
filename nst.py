@@ -40,12 +40,12 @@ def Transforming(c_image,s_image):
     with st.spinner('Hold On Transforming!!!...'):
         prediction=model(tf.constant(c_image),tf.constant(s_image))[0]
         pred_img=np.squeeze(prediction)
-    return prediction,pred_img
+    return pred_img
 if content_img and style_img is not None:
     content_image=load_img(content_img)
     style_image=load_img(style_img)
 
-    result,res_img=Transforming(content_image,style_image)
+    res_img=Transforming(content_image,style_image)
 
     if result is not None:
         st.subheader('Here Is Your Art')
