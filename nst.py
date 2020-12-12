@@ -29,7 +29,7 @@ def load_my_model():
 model=load_my_model()
 
 ### prevent displaying file_uploader warning
-st.set_option('deprecation.showfileUploaderEncoding', False)
+#st.set_option('deprecation.showfileUploaderEncoding', False)
 
 content_img=st.file_uploader('Choose Content Image:')
 style_img=st.file_uploader('Choose Style Image:')
