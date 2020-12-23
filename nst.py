@@ -21,7 +21,7 @@ st.subheader('Generate Art without an Artist..')
 
 model_path='https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/1'
 
-@st.cache(show_spinner=False)
+@st.cache(show_spinner=False,allow_output_mutation=True)
 def load_my_model():
     model=tf_hub.load(model_path)
     return model
@@ -34,7 +34,7 @@ model=load_my_model()
 content_img=st.file_uploader('Choose Content Image:')
 style_img=st.file_uploader('Choose Style Image:')
 
-@st.cache(show_spinner=False)
+@st.cache(show_spinner=False,allow_output_mutation=True)
 def Transforming(c_image,s_image):
     #Indicates text until processing..
     with st.spinner('Hold On Transforming!!!...'):
