@@ -21,7 +21,7 @@ st.subheader('Generate Art without an Artist..')
 
 model_path='https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/1'
 
-@st.cache(show_spinner=False,allow_output_mutation=True)
+@st.cache(show_spinner=False)
 def load_my_model():
     model=tf_hub.load(model_path)
     return model
