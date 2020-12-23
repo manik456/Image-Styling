@@ -10,11 +10,11 @@ def load_img(img_path):
     img=PIL.Image.open(img_path)
     #img=tf.keras.preprocessing.image.load_img(img_path)
     img=np.asarray(img)
-    img=np.expand_dims(img,axis=0)/255
+    img_4d=np.expand_dims(img,axis=0)/255
     ### converting np array to eager_tensor to make it
     ##compatible with tf models
-    img=tf.convert_to_tensor(img,dtype=tf.float32)
-    return img
+    img_4d=tf.convert_to_tensor(img_4d,dtype=tf.float32)
+    return img,img_4d
 
 st.title('Neural Style Transfer')
 st.subheader('Generate Art without an Artist..')
@@ -42,8 +42,8 @@ def Transforming(c_image,s_image):
         pred_img=np.squeeze(prediction)
     return pred_img
 if content_img and style_img is not None:
-    content_image=load_img(content_img)
-    style_image=load_img(style_img)
+    c_img,content_image=load_img(content_img)
+    s_img,style_image=load_img(style_img)
 
     res_img=Transforming(content_image,style_image)
 
@@ -53,9 +53,9 @@ if content_img and style_img is not None:
         st.image(res_img,use_column_width=True)
 
 if st.sidebar.checkbox('Show Content Image'):
-    st.sidebar.image(content_image,caption='Content Image...',use_column_width=True)
+    st.sidebar.image(c_img,caption='Content Image...',use_column_width=True)
 if st.sidebar.checkbox('Show Style Image'):
-    st.sidebar.image(style_image,caption='Style Image...',use_column_width=True)
+    st.sidebar.image(s_img,caption='Style Image...',use_column_width=True)
 
 
 
