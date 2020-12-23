@@ -47,7 +47,7 @@ if content_img and style_img is not None:
 
     res_img=Transforming(content_image,style_image)
 
-    if result is not None:
+    if res_img is not None:
         st.subheader('Here Is Your Art')
         'Whoaa Look At It.....'
         st.image(res_img,use_column_width=True)
