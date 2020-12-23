@@ -53,9 +53,9 @@ if content_img and style_img is not None:
         st.image(res_img,use_column_width=True)
 
 if st.sidebar.checkbox('Show Content Image'):
-    st.sidebar.image(content_img,caption='Content Image...',use_column_width=True)
+    st.sidebar.image(content_image,caption='Content Image...',use_column_width=True)
 if st.sidebar.checkbox('Show Style Image'):
-    st.sidebar.image(style_img,caption='Style Image...',use_column_width=True)
+    st.sidebar.image(style_image,caption='Style Image...',use_column_width=True)
 
 
 
